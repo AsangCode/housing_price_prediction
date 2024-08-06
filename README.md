@@ -57,7 +57,7 @@ git add
 git commit
 git push
 git log
-git checkout "commit ID"
+git checkout "commit ID without quotes"
 dvc checkout
 ```
 
