@@ -47,9 +47,7 @@ pip install -r requirement.txt
     * Data Transformation (Feature Engineering, Data Preprocessing)
     * Model Builing (Create a model using the processed data)
 
-## MLFlow
-
-#### Command to train the pipeline
+#### DVC: Data Version Control
 ```bash
 dvc init
 dvc add notebooks/data/Housing.csv
@@ -64,6 +62,13 @@ dvc checkout
 #### Command to train the pipeline
 ```bash
 python src/HousingPricePrediction/pipelines/training_pipeline.py
+```
+## Training Experiments - MLFlow
+```bash
+python src/HousingPricePrediction/pipelines/training_pipeline.py
+```
+```bash
+mlflow ui
 ```
 
 ### Prediction Pipeline
@@ -92,14 +97,6 @@ python app.py
 ## Streamlit App
 ```bash
 streamlit run streamlit_app.py
-```
-
-## Training Experiments - MLFlow
-```bash
-python src/HousingPricePrediction/pipelines/training_pipeline.py
-```
-```bash
-mlflow ui
 ```
 
 ## Deployment of DockerImage
