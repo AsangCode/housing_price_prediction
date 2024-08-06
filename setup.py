@@ -1,22 +1,31 @@
-from setuptools import find_packages, setup
-from pathlib import Path
+from setuptools import setup, find_packages
+from typing import List
 
-# Read the content of your README.md file
-long_description = (Path(__file__).parent / 'README.md').read_text()
+with open('README.md', 'r', encoding='utf-8') as f:
+    long_description = f.read()     
+   
+
+__version__ = "0.0.4"
+REPO_NAME = "housing_price_prediction"
+PKG_NAME= "housePricePrediction"
+AUTHOR_USER_NAME = "Asang"
+AUTHOR_EMAIL = "asangkumar6666@gmail.com"
 
 setup(
-    name="Housing_Price_Prediction",
-    version="3.0.0",
-    author="Asang Singh",
-    author_email="2022ac05454@wilp.bits-pilani.ac.in",
-    description="A package for predicting housing prices",
+    name=PKG_NAME,
+    version=__version__,
+    author=AUTHOR_USER_NAME,
+    author_email=AUTHOR_EMAIL,
+    description="A python package for connecting with database.",
     long_description=long_description,
-    long_description_content_type='text/markdown',  # Using Markdown content type for .md files
-    install_requires=["pytest", "pandas", "numpy", "ensure", "scikit-learn", "tox"],
-    packages=find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-)
+    long_description_content="text/markdown",
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
+    project_urls={
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+    },
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    install_requires=["pytest", "pandas", "numpy", "ensure","scikit-learn"],
+    )
+
+
