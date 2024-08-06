@@ -1,8 +1,8 @@
 from setuptools import find_packages, setup
 from pathlib import Path
 
-# Read the content of your README file
-long_description = (Path(__file__).parent / 'README.txt').read_text()
+# Read the content of your README.md file
+long_description = (Path(__file__).parent / 'README.md').read_text()
 
 setup(
     name="HousingPricePrediction",
@@ -11,7 +11,7 @@ setup(
     author_email="asangkumar6666@gmail.com",
     description="A package for predicting housing prices",
     long_description=long_description,
-    long_description_content_type='text/plain',  # Using plain text since README.txt is a .txt file
+    long_description_content_type='text/markdown',  # Using Markdown content type for .md files
     install_requires=["pytest", "pandas", "numpy", "ensure", "scikit-learn", "tox"],
     packages=find_packages(),
     classifiers=[
