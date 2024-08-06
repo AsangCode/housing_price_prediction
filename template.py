@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-package_name = "HousingPricePrediction"
+package_name = "Housing_Price_Prediction"
 
 list_of_files = [
     ".github/workflows/.gitkeep",
