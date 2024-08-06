@@ -5,7 +5,7 @@ from pathlib import Path
 long_description = (Path(__file__).parent / 'README.md').read_text()
 
 setup(
-    name="Housing_Price_Prediction",
+    name="Housing-Price-Prediction",
     version="0.0.1",
     author="Asang Kumar Singh",
     author_email="asangkumar6666@gmail.com",
