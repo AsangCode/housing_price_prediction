@@ -42,9 +42,9 @@ pip install -r requirement.txt
 
 ## Pipelines
 ### Training Pipeline
-    * Data Ingestion (fetched data from source)
-    * Data Transformation (Feature Engineering, Data Preprocessing)
-    * Model Builing (Create a model using the processed data)
+* Data Ingestion (fetched data from source)
+* Data Transformation (Feature Engineering, Data Preprocessing)
+* Model Builing (Create a model using the processed data)
 
 ## MLFlow
 ```bash
@@ -58,9 +58,9 @@ python src\HousingPricePrediction\pipelines\training_pipeline.py
 ```
 
 ### Prediction Pipeline
-    * Two types of prediction pipeline
-        * Single record prediction
-        * Batch prediction
+* Two types of prediction pipeline
+* Single record prediction
+* Batch prediction
 
 
 ## Explainer Dashboard
