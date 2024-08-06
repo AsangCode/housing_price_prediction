@@ -6,7 +6,7 @@ long_description = (Path(__file__).parent / 'README.md').read_text()
 
 setup(
     name="Housing_Price_Prediction",
-    version="2.0.1",
+    version="3.0.0",
     author="Asang Singh",
     author_email="2022ac05454@wilp.bits-pilani.ac.in",
     description="A package for predicting housing prices",
