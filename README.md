@@ -1,4 +1,4 @@
-# Housing Price Prediction
+# Housing_Price_Prediction
 
 ## Problem Statement
 
