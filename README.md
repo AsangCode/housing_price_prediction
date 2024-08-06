@@ -47,7 +47,7 @@ pip install -r requirement.txt
     * Data Transformation (Feature Engineering, Data Preprocessing)
     * Model Builing (Create a model using the processed data)
 
-## MLFlow & DagsHub
+## MLFlow
 
 #### Command to train the pipeline
 ```bash
@@ -96,7 +96,7 @@ streamlit run streamlit_app.py
 
 ## Training Experiments - MLFlow
 ```bash
-python app.py
+python src/HousingPricePrediction/pipelines/training_pipeline.py
 ```
 ```bash
 mlflow ui
