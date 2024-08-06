@@ -5,9 +5,9 @@ with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()     
    
 
-__version__ = "4.0.0"
+__version__ = "4.0.1"
 REPO_NAME = "housing_price_prediction"
-PKG_NAME= "housePricePrediction"
+PKG_NAME= "uniqueHousePricePrediction"
 AUTHOR_USER_NAME = "Asang"
 AUTHOR_EMAIL = "asangkumar6666@gmail.com"
 
