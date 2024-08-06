@@ -2,24 +2,23 @@
 
 ## Problem Statement
 
-```You are hired by a company, Home Realty Co Ltd. You are provided with a dataset containing details about various houses and their selling prices. The company is looking to optimize its profit by distinguishing between higher and lower priced houses. Your task is to help the company predict the price of a house based on the given attributes, so they can better assess the value of each property and make informed decisions to maximize their profit. Additionally, identify and provide the top 5 attributes that are the most important in determining the house prices.```
+You are hired by a company, Home Realty Co Ltd. You are provided with a dataset containing details about various houses and their selling prices. The company is looking to optimize its profit by distinguishing between higher and lower priced houses. Your task is to help the company predict the price of a house based on the given attributes, so they can better assess the value of each property and make informed decisions to maximize their profit. Additionally, identify and provide the top 5 attributes that are the most important in determining the house prices.
 
 ## Data Dictionary
 
-* Area - The total area of the house in square feet.
-* Bedrooms - The number of bedrooms in the house.
-* Bathrooms - The number of bathrooms in the house.
-* Stories - The number of stories (levels) in the house.
-* Mainroad - Indicates whether the house is located on a main road (Yes or No).
-* Guestroom - Indicates whether the house has a guestroom (Yes or No).
-* Basement - Indicates whether the house has a basement (Yes or No).
-* Hotwaterheating - Indicates whether the house has hot water heating (Yes or No).
-* Airconditioning - Indicates whether the house has air conditioning (Yes or No).
-* Parking - The number of parking spaces available with the house.
-* Prefarea - Indicates whether the house is in a preferred area (Yes or No).
-* Furnishingstatus - The furnishing status of the house, with options: Not Furnished, Semi-Furnished, Furnished.
-* Price - The selling price of the house.
-
+- **Area** - The total area of the house in square feet.
+- **Bedrooms** - The number of bedrooms in the house.
+- **Bathrooms** - The number of bathrooms in the house.
+- **Stories** - The number of stories (levels) in the house.
+- **Mainroad** - Indicates whether the house is located on a main road (Yes or No).
+- **Guestroom** - Indicates whether the house has a guestroom (Yes or No).
+- **Basement** - Indicates whether the house has a basement (Yes or No).
+- **Hotwaterheating** - Indicates whether the house has hot water heating (Yes or No).
+- **Airconditioning** - Indicates whether the house has air conditioning (Yes or No).
+- **Parking** - The number of parking spaces available with the house.
+- **Prefarea** - Indicates whether the house is in a preferred area (Yes or No).
+- **Furnishingstatus** - The furnishing status of the house, with options: Not Furnished, Semi-Furnished, Furnished.
+- **Price** - The selling price of the house.
 
 ### Create project template hierarchy
 ```bash
@@ -47,28 +46,15 @@ pip install -r requirement.txt
     * Data Transformation (Feature Engineering, Data Preprocessing)
     * Model Builing (Create a model using the processed data)
 
-#### DVC: Data Version Control
+## MLFlow
 ```bash
-dvc init
-dvc add notebooks/data/Housing.csv
-git add
-git commit
-git push
-git log
-git checkout "commit ID"
-dvc checkout
+python src/HousingPricePrediction/pipelines/training_pipeline.py
+mlflow ui
 ```
 
 #### Command to train the pipeline
 ```bash
-python src/HousingPricePrediction/pipelines/training_pipeline.py
-```
-## Training Experiments - MLFlow
-```bash
-python src/HousingPricePrediction/pipelines/training_pipeline.py
-```
-```bash
-mlflow ui
+python src\HousingPricePrediction\pipelines\training_pipeline.py
 ```
 
 ### Prediction Pipeline
@@ -99,21 +85,26 @@ python app.py
 streamlit run streamlit_app.py
 ```
 
+## Data version control (DVC)
+```bash
+dvc init
+dvc add notebooks/data/Housing.csv
+git add .
+git commit -m "Add data"
+git push
+git log
+git checkout <commit ID>
+dvc checkout
+```
+
 ## Deployment of DockerImage
-* Download the dockerhub desktop app
-* Login into the dockerhub (https://hub.docker.com/)
 ```bash
 docker build -t housing-price-prediction .
-```
-```bash
 docker run -p 5000:5000 housing-price-prediction
-```
-```bash
 docker push asangkumarsingh/projecthousingpriceprediction
 ```
+## Docker hub repo:
 * https://hub.docker.com/r/asangkumarsingh/projecthousinpriceprediction/tags
-
-## Cloud Deployed Links
 
 ## Dataset Link
 * https://www.kaggle.com/datasets/yasserh/housing-prices-dataset
