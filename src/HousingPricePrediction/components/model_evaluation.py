@@ -26,25 +26,24 @@ class ModelEvaluation:
             model_path = os.path.join("artifacts", "model.pkl")
             model = load_object(model_path)
 
+            tracking_url_type=urlparse(mlflow.get_tracking_uri()).scheme
+            print(tracking_url_type)
 
-            # tracking_url_type=urlparse(mlflow.get_tracking_uri()).scheme
-            # print(tracking_url_type)
+            with mlflow.start_run():
+                predicted_prices = model.predict(X_test)
 
-            # with mlflow.start_run():
-            #     predicted_prices = model.predict(X_test)
+                (rmse, mae, r2) = self.eval_metrics(actual=y_test, pred=predicted_prices)
 
-            #     (rmse, mae, r2) = self.eval_metrics(actual=y_test, pred=predicted_prices)
+                mlflow.log_metric("rmse", rmse)
+                mlflow.log_metric("mae", mae)
+                mlflow.log_metric("r2", r2)
 
-            #     mlflow.log_metric("rmse", rmse)
-            #     mlflow.log_metric("mae", mae)
-            #     mlflow.log_metric("r2", r2)
+                mlflow.sklearn.log_model(model, "model")
 
-            #     mlflow.sklearn.log_model(model, "model")
-
-            #     if tracking_url_type != "file":
-            #         mlflow.sklearn.log_model(model, "model", registered_model_name="ml_model")
-            #     else:
-            #         mlflow.sklearn.log_model(model, "model")
+                if tracking_url_type != "file":
+                    mlflow.sklearn.log_model(model, "model", registered_model_name="ml_model")
+                else:
+                    mlflow.sklearn.log_model(model, "model")
 
         except Exception as e:
             raise CustomException(e, sys)
